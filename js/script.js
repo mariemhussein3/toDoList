@@ -11,15 +11,17 @@ if (localStorage.getItem("myApps") != null) {
 }
 
 let addApp = () => {
-  if (validApp()) {
-    let myApps = {
-      content: todoInput.value,
-    };
-    totalMyApps.push(myApps);
-    displayMyApp();
-    localStorage.setItem("myApps", JSON.stringify(totalMyApps));
+  if (!todoInput.value.trim()) {
+    return;
   }
+  let myApps = {
+    content: todoInput.value,
+  };
+  totalMyApps.push(myApps);
+  displayMyApp();
+  localStorage.setItem("myApps", JSON.stringify(totalMyApps));
 };
+
 btnSubmit.addEventListener("click", function () {
   if (todoInput.value.trim() !== "") {
     addApp();
@@ -40,16 +42,19 @@ function displayMyApp() {
     let { content } = totalMyApps[i];
     temp += `
 <li 
- class=" d-flex align-items-center justify-content-between gap-5">${content} <button type="button" class="btn" onclick=deleteApp(${i}) id="btnDelete">
+ class=" d-flex align-items-center justify-content-between  w-100 p-1 px-3">
+ <span class="">${content}</span> 
+ <div class="btns d-flex gap-2">
+ <button type="button" class="btn" onclick=deleteApp(${i}) id="btnDelete">
   Delete
   </button>
    <button type="button" class="btn" onclick=updateApp(${i}) id="btnUpdate">Updata</button> 
-     </li>
+ </div>
+</li>
   `;
   }
-      todoList.innerHTML = temp;
+  todoList.innerHTML = temp;
 }
-
 btnEdit.addEventListener("click", function () {
   editApp();
 });
@@ -62,6 +67,9 @@ function updateApp(updateIndex) {
 }
 
 function editApp() {
+  if (!todoInput.value.trim()) {
+    return;
+  }
   btnEdit.classList.add("d-none");
   btnSubmit.classList.remove("d-none");
   totalMyApps[editIndex].content = todoInput.value;
@@ -72,12 +80,3 @@ function editApp() {
 let clear = () => {
   todoInput.value = null;
 };
-function validApp() {
-  var regex = /^[a-zA-Z0-9]{3,}$/;
-  var valid = todoInput.value;
-  if (regex.test(valid)) {
-    return true;
-  } else {
-    return false;
-  }
-}
