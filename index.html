@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toDo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="todo-app vh-100">
+      <div class="container text-center mt-5">
+        <h1 class="my-5">My To-Do List</h1>
+        <div class="myForm mx-auto p-5 bg-body-secondary">
+          <form class="">
+            <input
+              type="text"
+              class="form-control"
+              value=""
+              id="todoInput"
+              placeholder="Add a new task..."
+              autocomplete="off"
+            />
+            <ul id="todoList" class="my-4 p-0 gap-2 d-flex flex-column align-items-center justify-content-center"></ul>
+            <div>
+              <button type="button" class="btn" id="btnSubmit">Add</button>
+              <button type="button" class="btn d-none" id="btnEdit">
+                Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

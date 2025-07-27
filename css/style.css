@@ -1,0 +1,47 @@
+h1{
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+}
+h1::first-letter{
+    color: #861a1a;
+}
+#btnSubmit {
+  background-color: #ba081d;
+  padding: 7px 35px;
+  color: white;
+}
+#btnSubmit:hover {
+  background-color: #c5061c;
+}
+#btnDelete {
+  background-color: #5a5959;
+  padding: 7px 35px;
+  color: white;
+}
+#btnDelete:hover{
+    background-color: #7a7a7a;
+}
+#btnEdit {
+  background-color: #526aab;
+  padding: 7px 35px;
+  color: white;
+}
+#btnEdit:hover {
+  background-color: #5c78c3;
+}
+#btnUpdate {
+  background-color: #9eb23b;;
+  padding: 7px 35px;
+  color: white;
+}
+#btnUpdate:hover {
+  background-color: #afc541;;
+}
+li{
+    margin: 10px 0;
+}
+.myForm{
+    width: 65%;
+    box-shadow: 0 0 10px rgb(176, 175, 175);
+}
